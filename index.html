@@ -20,23 +20,47 @@
     <div class="container">
          <div class="row">
             <div class="col-md-12">
-                <h2> Homework 4</h2>
+                <h2> 你每天用了多少食水?</h2>
                    </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <form class="form-inline">
-                    <label for="showerTime">Showers Per Day</label>
+                    <label for="showerTime">每天沐浴花灑次數</label>
                    <!-- <input type="text" class="form-control" id="showerTime" placeholder="1"> -->
                      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="showerTime">
-                        <option selected>Choose...</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <option selected>請選擇</option>
+                        <option value="1">1次</option>
+                        <option value="2">2次</option>
+                        <option value="3">3次</option>
+                        <option value="4">4次</option>
                     </select>
-                    <label for="showerDuration">Duration(Mins)</label>
-                    <input class="form-control" type="text" id="showerDuration" placeholder="10mins">
+                    <label for="showerDuration">每次時段(分鐘)</label>
+                    <input class="form-control" type="text" id="showerDuration" placeholder="10分鐘">
+                </form>
+            </div>
+        </div>
+            <div class="row">
+            <div class="col-md-12">
+                <form class="form-group">
+                    <label for="dishDuration">每天清洗碗碟時間(分鐘)</label>
+                     <input type="text" class="form-control" id="dishDuration" placeholder="10分鐘">
+                </form>
+            </div>
+        </div>
+            <div class="row">
+            <div class="col-md-12">
+                <form class="form-inline">
+                    <label for="runningDuration">每天使用水龍頭時段(分鐘)</label>
+                    <input class="form-control" type="text" id="runningDuration" placeholder="10分鐘">
+                    <label for="runningChoice">有沒有安裝低流量水龍頭</label>
+
+                     <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="runningChoice">
+                        <option selected>請選擇</option>
+                        <option value="0.5">有</option>
+                        <option value="1">沒有</option>
+                    </select>
+
                 </form>
             </div>
         </div>
@@ -60,8 +84,11 @@
                                 // Do whatever you want
                                 var sT = $('#showerTime').val();
                                 var sD = $('#showerDuration').val();
-                                var sTotal = sT * sD * 15.14;
-                                $('#sTotal').val(sTotal+"Litre");
+                                var dD = $('#dishDuration').val();
+                                var rD = $('#runningDuration').val();
+                                var rC = $('#runningChoice').val();
+                                var sTotal = sT * sD * 15.14 + dD * 15.14 + rD * rC * 15.14;
+                                $('#sTotal').val(sTotal+" Litre");
                             });
                         }); // Routine format; put all your jQuery initialisation inside
         </script>
