@@ -72,7 +72,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                <label for="total">Total Water Used for Showering:</label>
+                <label for="total">每天食水用量</label>
                 <input class="form-control" type="text" id="sTotal">
                 </div>
             </div>
@@ -92,9 +92,40 @@
                             });
                         }); // Routine format; put all your jQuery initialisation inside
         </script>
+         <div class="row">
+            <div class="col-md-12">
+
+                        <div class="form-group">
+                                <label for="headcount">你每天食水用量是否高於香港現時的整體人均每日用水量?</label>
+                                <input class="form-control" type="text" id="sTotal">
+                            </div>
+
+                                <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true" style="display: none" id="lower"></span>
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="display: none" id="higher"></span>
+
+                        <script>
+                        $(function() {
+                            $('#income').change(function() {
+                                //var money = $('#income').val();
+                                //var salary = $('#income').val();
+                                $('#sTotal')).val();
+                                if (sTotal > 130) {
+                                    $('#lower').show();
+                                    $('#higher').hide();
+                                } else {
+                                    $('#higher').show();
+                                    $('#lower').hide();
+                                }
+                            });
+                        });
+                        </script>
+                        </div>
+           </div>
+        </div>
+
         <div class="row">
              <div class="col-md-12">
-                 <p>香港現時的整體人均每日用水量為0.13立方米（即130升），你可以參考以下的例子，計算你家人的平均每日用水量。</p>
+                 <p>香港現時的整體人均每日用水量為0.13立方米（即130公升）</p>
             </div>
         </div>
     </div>
