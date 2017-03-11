@@ -95,9 +95,9 @@
          <div class="row">
             <div class="col-md-12">
 
-                        <div class="form-group">
-                                <label for="headcount">你每天食水用量是否高於香港現時的整體人均每日用水量?</label>
-                                <input class="form-control" type="text" id="sTotal">
+                        </div>
+                                <p>你每天食水用量是否高於香港現時的整體人均每日用水量?</p>
+            
                             </div>
 
                                 <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true" style="display: none" id="lower"></span>
@@ -108,7 +108,7 @@
                             $('#income').change(function() {
                                 //var money = $('#income').val();
                                 //var salary = $('#income').val();
-                                $('#sTotal')).val();
+                                $('#sTotal').val();
                                 if (sTotal > 130) {
                                     $('#lower').show();
                                     $('#higher').hide();
